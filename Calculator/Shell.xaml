@@ -6,9 +6,10 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:local="clr-namespace:Calc.Common;assembly=Calc.Common"
         mc:Ignorable="d"
-        Title="CalculatorApp">
-    <DockPanel LastChildFill="True">
-        <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="{x:Static local:RegionName.DisplayRegion}"/>
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="500" Width="300">
+    <DockPanel>
+        <ContentControl DockPanel.Dock="Top" HorizontalAlignment="Center" prism:RegionManager.RegionName="{x:Static local:RegionName.DisplayRegion}"/>
         <ContentControl DockPanel.Dock="Bottom" prism:RegionManager.RegionName="{x:Static local:RegionName.KeyboardRegion }"/>
     </DockPanel>
 </Window>

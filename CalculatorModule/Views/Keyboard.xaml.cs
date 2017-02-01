@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CalculatorModule
+namespace CalculatorModule.Views
 {
     /// <summary>
-    /// Interaction logic for DisplayControl.xaml
+    /// Interaction logic for KeyboardControl.xaml
     /// </summary>
-    public partial class DisplayView : UserControl
+    public partial class Keyboard : UserControl
     {
-        public DisplayView()
+        public Keyboard()
         {
             InitializeComponent();
         }
