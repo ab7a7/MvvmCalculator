@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Calculator"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:local="clr-namespace:Calc.Common;assembly=Calc.Common"
         mc:Ignorable="d"
-        Title="Shell" Height="300" Width="300">
-    <Grid>
-        <Label Content="Hello World From Prism"></Label>
-    </Grid>
+        Title="CalculatorApp">
+    <DockPanel LastChildFill="True">
+        <ContentControl DockPanel.Dock="Top" prism:RegionManager.RegionName="{x:Static local:RegionName.DisplayRegion}"/>
+        <ContentControl DockPanel.Dock="Bottom" prism:RegionManager.RegionName="{x:Static local:RegionName.KeyboardRegion }"/>
+    </DockPanel>
 </Window>
