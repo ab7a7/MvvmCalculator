@@ -14,26 +14,46 @@ namespace Tests
         public void LoadCalculator_TotalIsZero_IsTrue()
         {
             //Arrange
-            var calc = new DisplayViewModel();
+            var calc = ConstructCalculator();
 
             //Act
             var result = calc.Total;
 
             //Assert
-            Assert.Equal(result, 0);
+            Assert.Equal(0, calc.Total);
         }
 
-        [Fact]
-        public void Calculator()
+        [Theory]
+        [InlineData(1,1)]
+        [InlineData(0,0)]
+        [InlineData(-1,1)]
+        [InlineData(100,0)]
+        public void Calculator_CanAddTwoNumbers_IsOK(int a, int b)
         {
-            //Arrange
-            var calc = new DisplayViewModel();
+            var calc = ConstructCalculator();
 
-            //Act
-            var result = calc.Total;
+            calc.Add(a);
+            calc.Add(b);
+            Assert.Equal(a+b, calc.Total);
+        }
 
-            //Assert
-            Assert.Equal(result, 0);
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(0, 0)]
+        [InlineData(-1, 1)]
+        [InlineData(100, 0)]
+        public void Calculator_CanSubtractTwoNumbers_IsOK(int a, int b)
+        {
+            var calc = ConstructCalculator();
+
+            calc.Subtract(a);
+            calc.Subtract(b);
+            Assert.Equal(a - b, calc.Total);
+        }
+
+        private DisplayViewModel ConstructCalculator()
+        {
+            return new DisplayViewModel();
         }
     }
 }

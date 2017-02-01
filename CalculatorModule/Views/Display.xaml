@@ -8,6 +8,6 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <Label Content="Display Control" Background="White" Foreground="Black"></Label>
+        <Label Content="{Binding Total}" Background="White" Foreground="Black"></Label>
     </Grid>
 </UserControl>
